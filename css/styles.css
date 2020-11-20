@@ -1,0 +1,229 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  --gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --lighter-grey: hsl(240, 78%, 98%);
+  --ligth-grey: hsl(240, 78%, 98%);
+  --grey: hsl(233, 13%, 49%);
+  --dark-grey: hsl(232, 13%, 33%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+body {
+  background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, left bottom;
+  background-size: 300px, 300px;
+  background-color: var(--lighter-grey);
+  margin: auto;
+  position: relative;
+  width: 95vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+header {
+  color: var(--dark-grey);
+  margin-bottom: 2rem;
+}
+
+.cards-container {
+  margin-bottom: 2rem;
+}
+
+.card {
+  border-radius: 8px;
+  list-style-type: none;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  height: 100%;
+  min-width: 280px;
+  box-shadow: 0px 10px 8px 2px hsl(236, 72%, 79%, 25%);
+}
+
+.price {
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+
+.detail {
+  border-top-style: solid;
+  border-width: 0.1rem;
+  padding: 1rem;
+}
+
+.card a {
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.white {
+  background-color: white;
+  color: var(--dark-grey);
+}
+
+.white .detail {
+  border-color: var(--ligth-grey);
+}
+
+.white-btn {
+  background: var(--gradient);
+  color: white;
+}
+
+.white-btn:hover {
+  background: none;
+  color: hsl(237, 63%, 64%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: hsl(237, 63%, 64%);
+}
+
+.violet {
+  background: var(--gradient);
+  color: white;
+}
+
+.violet .detail {
+  border-color: var(--light-grey);
+}
+
+.violet-btn {
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.violet-btn:hover {
+  background: none;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+/* ---------- SWITCH BTN ---------- */
+
+.swith-container {
+  margin-top: 2rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+#annually,
+#monthly {
+  color: var(--grey);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background: var(--gradient);
+  border-radius: 20px;
+  margin: 1.2rem;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.switch:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.checkbox:checked + .switch::after {
+  left: 25px;
+}
+
+.checkbox {
+  display: none;
+}
+/* ------ FOOTER ------ */
+
+.attribution {
+  color: var(--grey);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--grey);
+}
+
+@media only screen and (min-width: 850px) {
+  body {
+    font-size: 1.1rem;
+    height: 100vh;
+  }
+
+  header {
+    color: var(--dark-grey);
+    margin: 3rem auto;
+  }
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .card {
+    margin: auto;
+    padding: 2.2rem;
+    width: 220px;
+  }
+  .violet {
+    padding: 3.5rem 2rem;
+  }
+
+  .price {
+    font-size: 3rem;
+    padding: 1.5rem;
+  }
+
+  .card a {
+    margin-top: 2.2rem;
+  }
+
+  .btn {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .card {
+    width: 300px;
+  }
+
+  .price {
+    font-size: 3.7rem;
+  }
+}
